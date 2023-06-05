@@ -38,6 +38,10 @@ export class ApiConfigService {
     return this.nodeEnv === 'test';
   }
 
+  get documentationEnabled(): boolean {
+    return this.getBoolean('ENABLE_DOCUMENTATION');
+  }
+
   get mssqlConfig(): TypeOrmModuleOptions {
     const entities = [
       MasterEESCompany,
